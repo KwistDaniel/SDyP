@@ -1,0 +1,46 @@
+Conectar al cluster:
+ssh -p 2237 sdyp02@cluster-lidic-r.unsl.edu.ar
+****
+
+Cambiar de nodo desde cmd ya logueado:
+ssh nodox (1..4)
+ej: ssh nodo1 y me deja en nodo 1 y ahi puedo compilar y ejecutar
+
+Ejecuciones:
+1.
+gcc main.c -o main -lm
+./main
+
+2.
+mpicc main2.c -o main2 -lm
+mpirun -np 4 -machinefile machinefile ./main2
+mpirun -np 16 -machinefile machinefile ./main2
+mpirun -np 32 -machinefile machinefile ./main2
+
+3.
+gcc -fopenmp main3.c -o main3 -lm
+./main3
+
+4.
+mpicc -fopenmp main4.c -o main4 -lm
+mpirun -np 4 -machinefile machinefile ./main4
+mpirun -np 16 -machinefile machinefile ./main4
+mpirun -np 32 -machinefile machinefile ./main4
+
+Conectar Filezilla:
+Host:
+sftp://cluster-lidic-r.unsl.edu.ar
+Username:
+sdyp02
+Password:
+****
+Port:
+2237
+
+Comandos Magick:
+magick 800x800_comienzo.jpg -resize 800x800 -type TrueColor tt1.bmp
+magick 800x800_fin.jpg -resize 800x800 -type TrueColor tt2.bmp
+magick 2000x2000_comienzo.jpg -resize 2000x2000 -type TrueColor tt1.bmp
+magick 2000x2000_fin.jpg -resize 2000x2000 -type TrueColor tt2.bmp
+magick 5000x5000_comienzo.jpg -resize 5000x5000 -type TrueColor tt1.bmp
+magick 5000x5000_fin.jpg -resize 5000x5000 -type TrueColor tt2.bmp
